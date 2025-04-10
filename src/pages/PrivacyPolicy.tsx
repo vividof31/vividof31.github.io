@@ -1,7 +1,6 @@
 const PrivacyPolicy = () => {
   const agencyName = "Vivid Agency"; // Replace if needed
   const contactEmail = "contact@vividagency.com"; // Use the correct email
-  const websiteUrl = "[Your Website URL]"; // Replace with actual URL
   const lastUpdated = "[Date - e.g., April 8, 2025]"; // Replace with date
 
   return (

@@ -80,7 +80,7 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900">
       <ScrollToTop /> {/* Add scroll to top component */}
-      <Header handleSmoothScroll={handleSmoothScroll} openModal={openModal} />
+      <Header handleSmoothScroll={handleSmoothScroll} />
       <main className="flex-grow pt-14 md:pt-16">
         <Routes>
           <Route path="/" element={<MainPageLayout openModal={openModal} handleSmoothScroll={handleSmoothScroll} />} />
