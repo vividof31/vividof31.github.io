@@ -1,5 +1,3 @@
-import React from 'react';
-
 const TermsOfService = () => {
   const agencyName = "Vivid Agency"; // Replace if needed
   const websiteUrl = "[Your Website URL]"; // Replace with actual URL

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Target, ShieldCheck, Users, Award } from 'lucide-react';
 import FadeInWhenVisible from './FadeInWhenVisible';
 import { useLanguage } from '../contexts/LanguageContext'; // Import useLanguage

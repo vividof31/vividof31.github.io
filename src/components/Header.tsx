@@ -1,6 +1,6 @@
-   import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom'; // Import useNavigate
-import { Menu, X, Sun, Moon, ChevronDown, Globe } from 'lucide-react';
+import { Menu, X, Sun, Moon, ChevronDown } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import 'country-flag-icons/react/3x2'; // Import base CSS
@@ -16,7 +16,6 @@ const Header: React.FC<HeaderProps> = ({ handleSmoothScroll, openModal }) => {
   const { theme, toggleTheme } = useTheme();
   const { t, language, setLanguage } = useLanguage();
   const location = useLocation();
-  const navigate = useNavigate(); // Hook for programmatic navigation
   const langDropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -63,8 +62,6 @@ const Header: React.FC<HeaderProps> = ({ handleSmoothScroll, openModal }) => {
     setLanguage(lang);
     setIsLangDropdownOpen(false);
   };
-
-  const getFlagCode = (lang: 'en' | 'es') => (lang === 'en' ? 'US' : 'ES');
 
   return (
 <header className="bg-gradient-to-r from-pink-100 via-purple-100 to-blue-100 dark:bg-gradient-to-r dark:from-black dark:via-gray-900 dark:to-black fixed w-full z-50 min-h-[4rem]">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import FAQList from './FAQList';
 import { useLanguage } from '../../contexts/LanguageContext'; // Import useLanguage
 

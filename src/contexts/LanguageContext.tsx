@@ -1,5 +1,4 @@
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
-import { toast } from 'sonner'; // Import toast
 
 type Language = 'en' | 'es' | 'ru';
 

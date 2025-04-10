@@ -1,5 +1,3 @@
-import React from 'react';
-
 const PrivacyPolicy = () => {
   const agencyName = "Vivid Agency"; // Replace if needed
   const contactEmail = "contact@vividagency.com"; // Use the correct email

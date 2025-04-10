@@ -1,8 +1,8 @@
-import React, { useState, FormEvent, useEffect } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { X } from 'lucide-react';
 import { supabase } from '../lib/supabaseClient';
 import { useLanguage } from '../contexts/LanguageContext';
-import PhoneInput, { getCountries, getCountryCallingCode } from 'react-phone-number-input';
+import PhoneInput, { getCountries } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 
 const countryOptions = getCountries().map((code) => ({
@@ -52,16 +52,6 @@ const ApplicationFormModal: React.FC<ApplicationFormModalProps> = ({ isOpen, onC
   const [submitErrorDetails, setSubmitErrorDetails] = useState<string | null>(null);
   const [uploadProgress, setUploadProgress] = useState<string | null>(null);
 
-  // Reset form function
-  const resetForm = () => {
-    setFullName(''); setEmail(''); setPhoneNumber(''); setPreferredContact('');
-    setWhatsappNumber(''); setUsePhoneForWhatsapp(false); setTelegramUsername('');
-    setAge(''); setCountryOrigin(''); setPrimaryLanguage('');
-    setHasOfAccount(null); setIsOfVerified(null); setHasVerifiedPayment(null);
-    setEarningsLast30Days(''); setWhyJoin(''); setAgeConfirmed(false);
-    setSelectedFiles([]); setFileError(null);
-    setSubmitStatus('idle'); setSubmitErrorDetails(null); setUploadProgress(null);
-  };
 
   // Handler for removing a selected file
   const handleRemoveFile = (indexToRemove: number) => {
@@ -114,7 +104,6 @@ const ApplicationFormModal: React.FC<ApplicationFormModalProps> = ({ isOpen, onC
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) { validationErrors.push(t('emailValidationError', 'Please enter a valid email address.')); }
-    const phoneRegex = /^[+\-\(\)\s\d]+$/;
     // if (phoneNumber && !phoneRegex.test(phoneNumber)) { validationErrors.push(t('phoneValidationError', 'Please enter a valid phone number format.')); }
     // if (preferredContact === 'WhatsApp' && !usePhoneForWhatsapp && whatsappNumber && !phoneRegex.test(whatsappNumber)) { validationErrors.push(t('whatsappValidationError', 'Please enter a valid WhatsApp number format.')); }
     // if (preferredContact === 'Telegram' && telegramUsername && /\s/.test(telegramUsername)) { validationErrors.push(t('telegramValidationError', 'Telegram username cannot contain spaces.')); }

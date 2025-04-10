@@ -1,10 +1,8 @@
-import React from 'react';
 import { Instagram, Send, Phone, Mail } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext'; // Import useLanguage
 
 const Contact = () => {
   const { t } = useLanguage(); // Use hook
-  const email = "contact@vividagency.com"; // Keep actual email
 
   return (
     <section id="contact" className="py-16 md:py-24 bg-gradient-to-r from-blue-50 to-green-50 dark:from-gray-900 dark:to-gray-900">

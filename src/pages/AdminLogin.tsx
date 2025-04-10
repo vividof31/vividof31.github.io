@@ -1,4 +1,4 @@
-import React, { useState, FormEvent, useEffect } from 'react'; // Import useEffect
+import { useState, FormEvent, useEffect } from 'react'; // Import useEffect
 import { supabase } from '../lib/supabaseClient';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext'; // Import useAuth to check if already logged in
