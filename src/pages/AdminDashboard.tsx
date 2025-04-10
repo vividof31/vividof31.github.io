@@ -46,7 +46,6 @@ const AdminDashboard = () => {
   const [submissions, setSubmissions] = useState<Submission[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [imageIndices, setImageIndices] = useState<{ [submissionId: number]: number }>({});
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [activeImages, setActiveImages] = useState<string[] | null>(null);
   const [activeSubmissionId, setActiveSubmissionId] = useState<number | null>(null);
@@ -63,7 +62,6 @@ const AdminDashboard = () => {
   const [startAvailability, setStartAvailability] = useState('');
   const [blockedCountries, setBlockedCountries] = useState('');
   const [contractReady, setContractReady] = useState(false);
-  const [equipmentReady, setEquipmentReady] = useState(false);
   const [adminNotes, setAdminNotes] = useState('');
 
   useEffect(() => {
@@ -211,7 +209,6 @@ const AdminDashboard = () => {
                         setStartAvailability(sub.start_availability || '');
                         setBlockedCountries(sub.blocked_countries || '');
                         setContractReady(!!sub.contract_signed);
-                        setEquipmentReady(!!sub.equipment_ready);
                         setAdminNotes(sub.admin_notes || '');
                         setShowOnboardingModal(true);
                       }}

@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link, useLocation } from 'react-router-dom'; // Import useNavigate
 import { Menu, X, Sun, Moon, ChevronDown } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -7,10 +7,9 @@ import 'country-flag-icons/react/3x2'; // Import base CSS
 
 interface HeaderProps {
   handleSmoothScroll: (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, href: string) => void;
-  openModal: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ handleSmoothScroll, openModal }) => {
+const Header: React.FC<HeaderProps> = ({ handleSmoothScroll }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
