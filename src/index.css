@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  transition-property: background-color, color, border-color, fill, stroke;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+}
+
+@media (prefers-color-scheme: dark) {
+  .PhoneInputCountrySelectArrow {
+    color: #d1d5db; /* Tailwind gray-300 */
+  }
+}
